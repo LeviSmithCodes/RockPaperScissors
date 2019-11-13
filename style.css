@@ -1,0 +1,5 @@
+#button-col,
+#computer-choice {
+  display: flex;
+  justify-content: center;
+}

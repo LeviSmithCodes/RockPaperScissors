@@ -1,11 +1,16 @@
 #button-col,
 #computer-choice,
 #title,
-#col-img {
+#col-img,
+#win-loss {
   display: flex;
   justify-content: center;
   text-align: center;
   color: #5ec5ba;
+}
+
+#title {
+  background-color: var(--secondary) !important;
 }
 
 .btn {
@@ -24,4 +29,8 @@ body,
 header,
 main {
   background-color: #15133c;
+}
+
+#computer-choice {
+  min-height: 3em;
 }

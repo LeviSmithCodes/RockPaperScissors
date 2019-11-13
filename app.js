@@ -21,6 +21,9 @@ let gameChoices = [
   }
 ];
 
+let playerWins = 0;
+let playerLosses = 0;
+
 function play(playerChoice) {
   // Determine computer choice
   let computerChoice =
@@ -35,15 +38,19 @@ function play(playerChoice) {
 
   if (playerObject.winsAgainst.includes(computerChoice)) {
     outcome = "win!";
+    playerWins += 1;
   } else if (playerObject.title == computerChoice) {
     outcome = "tie. gg fren.";
   } else {
     outcome = "lose. :(";
+    playerLosses += 1;
   }
 
   document.querySelector(
     "#computer-choice"
   ).innerHTML = `The computer threw ${computerChoice}. You ${outcome} <br>Click a button to play again!`;
+
+  drawWinLoss();
 }
 
 function drawButtons() {
@@ -54,4 +61,11 @@ function drawButtons() {
   document.querySelector("#button-col").innerHTML = template;
 }
 
+function drawWinLoss() {
+  document.querySelector(
+    "#win-loss"
+  ).innerHTML = `Your wins: ${playerWins} <br> Your losses: ${playerLosses}`;
+}
+
 drawButtons();
+drawWinLoss();

@@ -1,15 +1,23 @@
 let gameChoices = [
   {
     title: "rock",
-    winsAgainst: "scissors"
+    winsAgainst: ["scissors", "lizard"]
   },
   {
     title: "paper",
-    winsAgainst: "rock"
+    winsAgainst: ["rock", "spock"]
   },
   {
     title: "scissors",
-    winsAgainst: "paper"
+    winsAgainst: ["paper", "lizard"]
+  },
+  {
+    title: "lizard",
+    winsAgainst: ["paper", "spock"]
+  },
+  {
+    title: "spock",
+    winsAgainst: ["scissors", "rock"]
   }
 ];
 
@@ -25,25 +33,24 @@ function play(playerChoice) {
 
   let outcome = "";
 
-  if (playerObject.winsAgainst == computerChoice) {
+  if (playerObject.winsAgainst.includes(computerChoice)) {
     outcome = "win!";
   } else if (playerObject.title == computerChoice) {
-    outcome = "tie. gg fren";
+    outcome = "tie. gg fren.";
   } else {
     outcome = "lose. :(";
   }
 
   document.querySelector(
     "#computer-choice"
-  ).innerHTML = `The computer threw ${computerChoice}. You ${outcome}`;
+  ).innerHTML = `The computer threw ${computerChoice}. You ${outcome} <br>Click a button to play again!`;
 }
 
 function drawButtons() {
   let template = "";
   gameChoices.forEach(item => {
-    template += `<button type="button" class="btn btn-outline-primary" data-toggle="button" onclick="play('${item.title}')">${item.title}</button>`;
+    template += `<button type="button" class="btn btn-secondary" data-toggle="button" onclick="play('${item.title}')">${item.title}</button>`;
   });
-  // console.log(template);
   document.querySelector("#button-col").innerHTML = template;
 }
 

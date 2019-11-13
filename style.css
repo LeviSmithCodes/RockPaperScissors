@@ -1,5 +1,27 @@
 #button-col,
-#computer-choice {
+#computer-choice,
+#title,
+#col-img {
   display: flex;
   justify-content: center;
+  text-align: center;
+  color: #5ec5ba;
+}
+
+.btn {
+  margin: 0px 5px;
+  color: #5ec5ba !important;
+  outline-color: #5ec5ba !important;
+}
+
+#img-rules {
+  height: 50vh;
+  width: 50vh;
+}
+
+html,
+body,
+header,
+main {
+  background-color: #15133c;
 }

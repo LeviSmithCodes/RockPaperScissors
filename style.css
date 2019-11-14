@@ -3,6 +3,7 @@
 #title,
 #col-img,
 #win-loss,
+#rules-text,
 #credit-col {
   display: flex;
   justify-content: center;
@@ -25,6 +26,7 @@
   width: 50vh;
 }
 
+/* I know, I know */
 html,
 body,
 header,
@@ -40,3 +42,8 @@ footer {
 .credit-text {
   font-size: x-small;
 }
+
+/* .rules-text{
+  font-size:xx-small
+  color: 
+} */

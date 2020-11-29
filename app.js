@@ -1,28 +1,29 @@
 let gameChoices = [
   {
     title: "rock",
-    winsAgainst: ["scissors", "lizard"]
+    winsAgainst: ["scissors", "lizard"],
   },
   {
     title: "paper",
-    winsAgainst: ["rock", "spock"]
+    winsAgainst: ["rock", "spock"],
   },
   {
     title: "scissors",
-    winsAgainst: ["paper", "lizard"]
+    winsAgainst: ["paper", "lizard"],
   },
   {
     title: "lizard",
-    winsAgainst: ["paper", "spock"]
+    winsAgainst: ["paper", "spock"],
   },
   {
     title: "spock",
-    winsAgainst: ["scissors", "rock"]
-  }
+    winsAgainst: ["scissors", "rock"],
+  },
 ];
 
 let playerWins = 0;
 let playerLosses = 0;
+let playDesc = "";
 
 function play(playerChoice) {
   // Determine computer choice
@@ -31,7 +32,7 @@ function play(playerChoice) {
 
   // loop over the choices array to find the object that matches the input of the player
   let playerObject = gameChoices.find(
-    c => c.title.toLowerCase() == playerChoice.toLowerCase()
+    (c) => c.title.toLowerCase() == playerChoice.toLowerCase()
   );
 
   let outcome = "";
@@ -53,9 +54,10 @@ function play(playerChoice) {
   drawWinLoss();
 }
 
+// Much later:  I think that using the title of iten as both what's shown as the button and what gets passed to play() is at least mildly clever
 function drawButtons() {
   let template = "";
-  gameChoices.forEach(item => {
+  gameChoices.forEach((item) => {
     template += `<button type="button" class="btn btn-secondary" data-toggle="button" onclick="play('${item.title}')">${item.title}</button>`;
   });
   document.querySelector("#button-col").innerHTML = template;
